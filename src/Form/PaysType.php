@@ -2,7 +2,10 @@
 
 namespace App\Form;
 
+use App\Entity\Continent;
+use App\Entity\Couleur;
 use App\Entity\Pays;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -12,7 +15,30 @@ class PaysType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('id_continent')
+        // ->add('couleur', EntityType::class, [
+        //     'class' => Couleur::class,
+        //     'mapped'=>false,
+        //     'choice_label' => function($couleur, $index, $id_value) {                
+        //         return $couleur->getNom();
+        //     }])
+        ->add('continent', EntityType::class, [
+
+            'class' => Continent::class,
+
+            'choice_label' => function($continent, $index, $id_value) {
+
+             // return $id_value . ' - ' . $continent->getNom();
+                return $continent->getNom();
+
+            },
+
+            'attr' => [
+
+                'class' => 'm-3',  // Ajouter la classe Bootstrap
+
+            ]
+
+        ])
             ->add('nom_pays')
         ;
     }

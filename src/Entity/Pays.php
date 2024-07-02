@@ -13,28 +13,20 @@ class Pays
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column]
-    private ?int $id_continent = null;
+   
 
     #[ORM\Column(length: 50)]
     private ?string $nom_pays = null;
+
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Continent $continent = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getIdContinent(): ?int
-    {
-        return $this->id_continent;
-    }
-
-    public function setIdContinent(int $id_continent): static
-    {
-        $this->id_continent = $id_continent;
-
-        return $this;
-    }
 
     public function getNomPays(): ?string
     {
@@ -44,6 +36,18 @@ class Pays
     public function setNomPays(string $nom_pays): static
     {
         $this->nom_pays = $nom_pays;
+
+        return $this;
+    }
+
+    public function getContinent(): ?Continent
+    {
+        return $this->continent;
+    }
+
+    public function setContinent(?Continent $continent): static
+    {
+        $this->continent = $continent;
 
         return $this;
     }
