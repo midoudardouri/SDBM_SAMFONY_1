@@ -4,7 +4,7 @@
 
 {% block body %}
 <div class="container"> 
-    <h1>Continent index</h1>
+    <h1>Continent</h1>
 
     <table class="table table-dark">
         <thead>
@@ -20,8 +20,8 @@
                 <td>{{ continent.id }}</td>
                 <td>{{ continent.nom }}</td>
                 <td>
-                    <a href="{{ path('app_continent_show', {'id': continent.id}) }}">show</a>
-                    <a href="{{ path('app_continent_edit', {'id': continent.id}) }}">edit</a>
+                    <a href="{{ path('app_continent_show', {'id': continent.id}) }}"><button type="button" class="btn btn-danger bi bi-eye"></button></a>
+                    <a href="{{ path('app_continent_edit', {'id': continent.id}) }}"><button type="button" class="btn btn-success bi bi-pencil-square"></button></a>
                 </td>
             </tr>
         {% else %}
@@ -32,6 +32,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_continent_new') }}">Create new</a>
+      <a href="{{ path('app_continent_new') }}"><button type="button" class="btn btn-warning">Ajoute</button></a>
+    
     </div>
 {% endblock %}
