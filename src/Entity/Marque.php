@@ -13,42 +13,20 @@ class Marque
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column]
-    private ?int $id_fabricant = null;
-
-    #[ORM\Column]
-    private ?int $id_pays = null;
-
-    #[ORM\Column(length: 50)]
+    #[ORM\Column(length: 255)]
     private ?string $nom_marque = null;
+
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Pays $pays = null;
+
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Fabricant $fabricant = null;
 
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getIdFabricant(): ?int
-    {
-        return $this->id_fabricant;
-    }
-
-    public function setIdFabricant(int $id_fabricant): static
-    {
-        $this->id_fabricant = $id_fabricant;
-
-        return $this;
-    }
-
-    public function getIdPays(): ?int
-    {
-        return $this->id_pays;
-    }
-
-    public function setIdPays(int $id_pays): static
-    {
-        $this->id_pays = $id_pays;
-
-        return $this;
     }
 
     public function getNomMarque(): ?string
@@ -59,6 +37,30 @@ class Marque
     public function setNomMarque(string $nom_marque): static
     {
         $this->nom_marque = $nom_marque;
+
+        return $this;
+    }
+
+    public function getPays(): ?Pays
+    {
+        return $this->pays;
+    }
+
+    public function setPays(?Pays $pays): static
+    {
+        $this->pays = $pays;
+
+        return $this;
+    }
+
+    public function getFabricant(): ?Fabricant
+    {
+        return $this->fabricant;
+    }
+
+    public function setFabricant(?Fabricant $fabricant): static
+    {
+        $this->fabricant = $fabricant;
 
         return $this;
     }

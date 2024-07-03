@@ -1,16 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Marque index{% endblock %}
+{% block title %}Marque{% endblock %}
 
 {% block body %}
-    <h1>Marque index</h1>
+    <h1>Marque</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Id_fabricant</th>
-                <th>Id_pays</th>
+                <th>Pays</th>
+                <th>Fabricant</th>
                 <th>Nom_marque</th>
                 <th>actions</th>
             </tr>
@@ -19,8 +19,8 @@
         {% for marque in marques %}
             <tr>
                 <td>{{ marque.id }}</td>
-                <td>{{ marque.idFabricant }}</td>
-                <td>{{ marque.idPays }}</td>
+                <td>{{ marque.pays.nom_pays }}</td>
+                <td>{{ marque.fabricant.nom_fabricant }}</td>
                 <td>{{ marque.nomMarque }}</td>
                 <td>
                     <a href="{{ path('app_marque_show', {'id': marque.id}) }}">show</a>
@@ -29,7 +29,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="3">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
