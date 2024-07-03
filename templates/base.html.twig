@@ -28,7 +28,7 @@
             <nav class="navbar navbar-expand-sm navbar-dark">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
-                        <img src="{{ asset('assets/img/hacker.jpg') }}" alt="Avatar Logo" class="rounded-pill">
+                        <img src="{{asset('img/a.png')}}" alt="Avatar Logo" class="rounded-pill">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                         <span class="navbar-toggler-icon"></span>
@@ -36,25 +36,25 @@
                     <div class="collapse navbar-collapse" id="collapsibleNavbar">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="http://127.0.0.1:8001/">Main</a>
+                                <a class="nav-link" href="{{ path('app_maincontrol') }}">{% trans %}Main{% endtrans %}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="http://127.0.0.1:8001/continent">Continent</a>
+                                <a class="nav-link" href="{{ path('app_continent_index') }}">{% trans %}gestion des continents{% endtrans %}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="http://127.0.0.1:8001/couleur">Couleur</a>
+                                <a class="nav-link" href="{{ path('app_couleur_index') }}">{% trans %}gestion des couleurs{% endtrans %}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="http://127.0.0.1:8001/marque">Marque</a>
+                                <a class="nav-link" href="{{ path('app_marque_index') }}">{% trans %}gestion des marques{% endtrans %}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="http://127.0.0.1:8001/pays">Pays</a>
+                                <a class="nav-link" href="{{ path('app_pays_index') }}">{% trans %}gestion des pays{% endtrans %}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="http://127.0.0.1:8001/typebiere">Typebiere</a>
+                                <a class="nav-link" href="{{ path('app_typebiere_index') }}">{% trans %}gestion des types{% endtrans %}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="http://127.0.0.1:8001/fabricant">Fabricant</a>
+                                <a class="nav-link" href="{{ path('app_fabricant_index') }}">{% trans %}gestion des fabricants{% endtrans %}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="http://127.0.0.1:8001/article">Article</a>
