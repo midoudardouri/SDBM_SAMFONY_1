@@ -17,11 +17,12 @@ class Marque
     private ?string $nom_marque = null;
 
     #[ORM\ManyToOne]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]
     private ?Pays $pays = null;
 
     #[ORM\ManyToOne]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]
+    
     private ?Fabricant $fabricant = null;
 
     public function getId(): ?int

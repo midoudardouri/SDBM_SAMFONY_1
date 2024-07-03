@@ -16,11 +16,17 @@
             </tr>
         </thead>
         <tbody>
+        {# {{ dump(marques)}} #}
         {% for marque in marques %}
             <tr>
                 <td>{{ marque.id }}</td>
-                <td>{{ marque.pays.nom_pays }}</td>
-                <td>{{ marque.fabricant.nom_fabricant }}</td>
+                <td>{{ marque.pays.nomPays }}</td>
+                {% if marque.fabricant  == NULL %}<td>{% trans %}Marque Indépendante{% endtrans %}</td>
+
+                {% else %}<td>{{ marque.fabricant.nomFabricant }}</td>
+
+                {% endif %} 
+                {# <td>{{ marque.fabricant.id }}</td> #}
                 <td>{{ marque.nomMarque }}</td>
                 <td>
                     <a href="{{ path('app_marque_show', {'id': marque.id}) }}">show</a>
