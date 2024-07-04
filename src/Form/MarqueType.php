@@ -21,18 +21,28 @@ class MarqueType extends AbstractType
                 'choice_label' => function($pays, $index, $id_value) {
 
                     // return $id_value . ' - ' . $pays->getNom();
-                       return $pays->getNom();
+                       return $pays->getNomPays();
        
                    },
+                   'attr' => [
+
+                    'class' => 'm-3',  // Ajouter la classe Bootstrap
+    
+                ]
             ])
             ->add('fabricant', EntityType::class, [
                 'class' => Fabricant::class,
                 'choice_label' => function($fabricant, $index, $id_value) {
 
                     // return $id_value . ' - ' . $fabricant->getNom();
-                       return $fabricant->getNom();
+                       return $fabricant->getNomFabricant();
        
                    },
+                   'attr' => [
+
+                    'class' => 'm-3',  // Ajouter la classe Bootstrap
+    
+                ]
             ])
         ;
     }
