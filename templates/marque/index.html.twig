@@ -127,7 +127,7 @@
                 <td>{{ marque.id }}</td>
                 <td>{{ marque.pays.nomPays }}</td>
                 {% if marque.fabricant is null %}
-                    <td>{% trans %}Marque Indépendante{% endtrans %}</td>
+                    <td>{% trans %}Sans Marque{% endtrans %}</td>
                 {% else %}
                     <td>{{ marque.fabricant.nomFabricant }}</td>
                 {% endif %}

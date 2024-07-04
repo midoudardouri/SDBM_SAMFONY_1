@@ -2,20 +2,126 @@
 
 {% block title %}Article index{% endblock %}
 
-{% block body %}
-    <h1>Article index</h1>
+{% block stylesheets %}
+<style>
+    .container {
+        margin-top: 20px;
+    }
 
+    h1 {
+        color: #ffffff;
+        text-shadow: 2px 2px 4px #000000;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2.5em; /* Augmenter la taille de la police */
+        animation: fadeIn 2s; /* Ajouter une animation de fondu */
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .table {
+        margin-bottom: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: #000000;
+        color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .table th,
+    .table td {
+        border: 1px solid #ffa500; /* Orange border */
+    }
+
+    .table thead th {
+        background-color: #343a40;
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    .table tbody tr {
+        background-color: #000000;
+        color: #ffffff;
+    }
+
+    .btn {
+        margin-right: 5px;
+    }
+
+    .btn-warning {
+        background-color: #ffc107;
+        border-color: #ffc107;
+    }
+
+    .btn-warning:hover {
+        background-color: #e0a800;
+        border-color: #d39e00;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+    .btn-danger:hover {
+        background-color: #c82333;
+        border-color: #bd2130;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        border-color: #28a745;
+    }
+
+    .btn-success:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #004085;
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .btn-container a {
+        flex: 1;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Article</h1>
+    <div class="btn-container">
+        <a href="{{ path('app_article_new') }}">
+            <button type="button" class="btn btn-warning btn-block">Create new</button>
+        </a>
+    </div>
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Nom_article</th>
                 <th>Prix_achat</th>
+                <th>Marque</th>
+                <th>Couleur</th>
+                <th>Typebiere</th>
                 <th>Volume</th>
                 <th>Titrage</th>
-                <th>Id_marque</th>
-                <th>Id_couleur</th>
-                <th>Id_type</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -25,14 +131,27 @@
                 <td>{{ article.id }}</td>
                 <td>{{ article.nomArticle }}</td>
                 <td>{{ article.prixAchat }}</td>
+                <td>{{ article.marque.nomMarque }}</td>
+                {% if article.couleur is null %}
+                    <td>{% trans %}Sans Couleur{% endtrans %}</td>
+                {% else %}
+                    <td>{{ article.couleur.nom }}</td>
+                {% endif %}
+               
+                {% if article.type is null %}
+                    <td>{% trans %}Sans Article{% endtrans %}</td>
+                {% else %}
+                    <td>{{ article.type.nomType }}</td>
+                {% endif %}
                 <td>{{ article.volume }}</td>
                 <td>{{ article.titrage }}</td>
-                <td>{{ article.idMarque }}</td>
-                <td>{{ article.idCouleur }}</td>
-                <td>{{ article.idType }}</td>
                 <td>
-                    <a href="{{ path('app_article_show', {'id': article.id}) }}">show</a>
-                    <a href="{{ path('app_article_edit', {'id': article.id}) }}">edit</a>
+                    <a href="{{ path('app_article_show', {'id': article.id}) }}">
+                        <button type="button" class="btn btn-danger bi bi-eye"></button>
+                    </a>
+                    <a href="{{ path('app_article_edit', {'id': article.id}) }}">
+                        <button type="button" class="btn btn-success bi bi-pencil-square"></button>
+                    </a>
                 </td>
             </tr>
         {% else %}
@@ -42,6 +161,5 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('app_article_new') }}">Create new</a>
+</div>
 {% endblock %}

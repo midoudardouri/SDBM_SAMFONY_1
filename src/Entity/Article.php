@@ -13,26 +13,27 @@ class Article
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 200)]
     private ?string $nom_article = null;
 
     #[ORM\Column]
     private ?float $prix_achat = null;
 
-    #[ORM\Column]
-    private ?float $volume = null;
-
-    #[ORM\Column]
-    private ?float $titrage = null;
-
-    #[ORM\Column]
-    private ?int $id_marque = null;
-
-    #[ORM\Column]
-    private ?int $id_couleur = null;
+    #[ORM\Column(nullable: true)]
+    private ?int $volume = null;
 
     #[ORM\Column(nullable: true)]
-    private ?int $id_type = null;
+    private ?float $titrage = null;
+
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Marque $marque = null;
+
+    #[ORM\ManyToOne]
+    private ?Couleur $couleur = null;
+
+    #[ORM\ManyToOne]
+    private ?Typebiere $type = null;
 
     public function getId(): ?int
     {
@@ -63,12 +64,12 @@ class Article
         return $this;
     }
 
-    public function getVolume(): ?float
+    public function getVolume(): ?int
     {
         return $this->volume;
     }
 
-    public function setVolume(float $volume): static
+    public function setVolume(?int $volume): static
     {
         $this->volume = $volume;
 
@@ -80,45 +81,45 @@ class Article
         return $this->titrage;
     }
 
-    public function setTitrage(float $titrage): static
+    public function setTitrage(?float $titrage): static
     {
         $this->titrage = $titrage;
 
         return $this;
     }
 
-    public function getIdMarque(): ?int
+    public function getMarque(): ?Marque
     {
-        return $this->id_marque;
+        return $this->marque;
     }
 
-    public function setIdMarque(int $id_marque): static
+    public function setMarque(?Marque $marque): static
     {
-        $this->id_marque = $id_marque;
+        $this->marque = $marque;
 
         return $this;
     }
 
-    public function getIdCouleur(): ?int
+    public function getCouleur(): ?Couleur
     {
-        return $this->id_couleur;
+        return $this->couleur;
     }
 
-    public function setIdCouleur(int $id_couleur): static
+    public function setCouleur(?Couleur $couleur): static
     {
-        $this->id_couleur = $id_couleur;
+        $this->couleur = $couleur;
 
         return $this;
     }
 
-    public function getIdType(): ?int
+    public function getType(): ?Typebiere
     {
-        return $this->id_type;
+        return $this->type;
     }
 
-    public function setIdType(?int $id_type): static
+    public function setType(?Typebiere $type): static
     {
-        $this->id_type = $id_type;
+        $this->type = $type;
 
         return $this;
     }
