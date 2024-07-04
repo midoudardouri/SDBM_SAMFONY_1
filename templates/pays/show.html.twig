@@ -2,9 +2,84 @@
 
 {% block title %}Pays{% endblock %}
 
-{% block body %}
-    <h1>Pays</h1>
+{% block stylesheets %}
+<style>
+    .container {
+        margin-top: 20px;
+    }
 
+    h1 {
+        color: #ffffff;
+        text-shadow: 2px 2px 4px #000000;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2.5em;
+        animation: fadeIn 2s;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .btn-warning {
+        background-color: #ffc107;
+        border-color: #ffc107;
+    }
+
+    .btn-warning:hover {
+        background-color: #e0a800;
+        border-color: #d39e00;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #004085;
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .table {
+        background-color: #000000;
+        color: #ffffff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .table th,
+    .table td {
+        border: 1px solid #ffa500;
+    }
+
+    .table th {
+        background-color: #343a40;
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    .table td {
+        background-color: #000000;
+        color: #ffffff;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Pays</h1>
     <table class="table">
         <tbody>
             <tr>
@@ -12,7 +87,7 @@
                 <td>{{ pay.id }}</td>
             </tr>
             <tr>
-                <th>Id_continent</th>
+                <th>Continent</th>
                 <td>{{ pay.Continent.nom }}</td>
             </tr>
             <tr>
@@ -21,10 +96,14 @@
             </tr>
         </tbody>
     </table>
-
-    <a href="{{ path('app_pays_index') }}">back to list</a>
-
-    <a href="{{ path('app_pays_edit', {'id': pay.id}) }}">edit</a>
-
-    {{ include('pays/_delete_form.html.twig') }}
+    <div class="btn-container">
+        <a href="{{ path('app_pays_index') }}">
+            <button type="button" class="btn btn-warning bi bi-backspace-fill"> Back to list</button>
+        </a>
+        <a href="{{ path('app_pays_edit', {'id': pay.id}) }}">
+            <button type="button" class="btn btn-primary bi bi-pencil-square"> Edit</button>
+        </a>
+        {{ include('pays/_delete_form.html.twig') }}
+    </div>
+</div>
 {% endblock %}

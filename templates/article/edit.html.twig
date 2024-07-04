@@ -3,11 +3,14 @@
 {% block title %}Edit Article{% endblock %}
 
 {% block body %}
-    <h1>Edit Article</h1>
+<div class="container">
+    <h1 class="my-5">Edit Article</h1>
 
     {{ include('article/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('app_article_index') }}">back to list</a>
-
-    {{ include('article/_delete_form.html.twig') }}
+    <div class="btn-container mt-3">
+        <a href="{{ path('app_article_index') }}" class="btn btn-secondary bi bi-backspace-fill">Back to list</a>
+        {{ include('article/_delete_form.html.twig') }}
+    </div>
+</div>
 {% endblock %}
