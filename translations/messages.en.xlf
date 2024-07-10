@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="aPJlkrA" resname="Sans Couleur">
+        <source>Sans Couleur</source>
+        <target>Without color</target>
+      </trans-unit>
+      <trans-unit id="pcrah4G" resname="Sans Article">
+        <source>Sans Article</source>
+        <target>Without article</target>
+      </trans-unit>
+      <trans-unit id="64FL48o" resname="Main">
+        <source>Main</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="kTdg3Vj" resname="gestion des continents">
+        <source>gestion des continents</source>
+        <target>management of continents</target>
+      </trans-unit>
+      <trans-unit id="fBgjK64" resname="gestion des couleurs">
+        <source>gestion des couleurs</source>
+        <target>color management</target>
+      </trans-unit>
+      <trans-unit id="CzswNcC" resname="gestion des marques">
+        <source>gestion des marques</source>
+        <target>brand management</target>
+      </trans-unit>
+      <trans-unit id="ct4TGa6" resname="gestion des pays">
+        <source>gestion des pays</source>
+        <target>country management</target>
+      </trans-unit>
+      <trans-unit id="pQAFXY." resname="gestion des types">
+        <source>gestion des types</source>
+        <target>type management</target>
+      </trans-unit>
+      <trans-unit id="mS7ScAr" resname="gestion des fabricants">
+        <source>gestion des fabricants</source>
+        <target>manufacturer management</target>
+      </trans-unit>
+      <trans-unit id="3P5DaA2" resname="gestion des Article">
+        <source>gestion des Article</source>
+        <target>Item management</target>
+      </trans-unit>
+      <trans-unit id="J.u7nB2" resname="SDBM SYMFONY - Accueil">
+        <source>SDBM SYMFONY - Accueil</source>
+        <target>SDBM SYMFONY - Home</target>
+      </trans-unit>
+      <trans-unit id="vfV0fdE" resname="Bienvenue sur SDBM SYMFONY !">
+        <source>Bienvenue sur SDBM SYMFONY !</source>
+        <target>Welcome to SDBM SYMFONY!</target>
+      </trans-unit>
+      <trans-unit id="nWfEcVQ" resname="Ce projet vise à créer une base de données vide, à la migrer avec une base de données existante, et à gérer les enregistrements avec des fonctionnalités CRUD.">
+        <source>Ce projet vise à créer une base de données vide, à la migrer avec une base de données existante, et à gérer les enregistrements avec des fonctionnalités CRUD.</source>
+        <target>This project aims to create an empty database, migrate it with an existing database, and manage records with CRUD functionality.</target>
+      </trans-unit>
+      <trans-unit id="_tlNVxg" resname="Ajouter des données">
+        <source>Ajouter des données</source>
+        <target>Add data</target>
+      </trans-unit>
+      <trans-unit id="6UmTAm2" resname="Commencez à ajouter de nouvelles données à votre base de données.">
+        <source>Commencez à ajouter de nouvelles données à votre base de données.</source>
+        <target>Start adding new data to your database.</target>
+      </trans-unit>
+      <trans-unit id="WVBRXrm" resname="Modifier des données">
+        <source>Modifier des données</source>
+        <target>Edit data</target>
+      </trans-unit>
+      <trans-unit id="fuy2f2C" resname="Modifiez les enregistrements existants dans votre base de données.">
+        <source>Modifiez les enregistrements existants dans votre base de données.</source>
+        <target>Edit existing records in your database.</target>
+      </trans-unit>
+      <trans-unit id="2ATgSUH" resname="Supprimer des données">
+        <source>Supprimer des données</source>
+        <target>Delete data</target>
+      </trans-unit>
+      <trans-unit id="778WFN1" resname="Supprimez les enregistrements inutiles de votre base de données.">
+        <source>Supprimez les enregistrements inutiles de votre base de données.</source>
+        <target>Delete unnecessary records from your database.</target>
+      </trans-unit>
+      <trans-unit id="cZG7O7f" resname="Sans Marque">
+        <source>Sans Marque</source>
+        <target>unbranded</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

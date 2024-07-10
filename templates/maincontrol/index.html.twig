@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}SDBM SYMFONY - Accueil{% endblock %}
+{% block title %}{% trans %}SDBM SYMFONY - Accueil {% endtrans %}{% endblock %}
 
 {% block body %}
 <!-- Intégration de Bootstrap 5 -->
@@ -8,16 +8,16 @@
 
 <div class="container mt-5">
     <div class="text-center">
-        <h1 class="display-4 animate__animated animate__fadeIn">Bienvenue sur SDBM SYMFONY !</h1>
-        <p class="lead mt-3 animate__animated animate__fadeIn animate__delay-1s">Ce projet vise à créer une base de données vide, à la migrer avec une base de données existante, et à gérer les enregistrements avec des fonctionnalités CRUD.</p>
+        <h1 class="display-4 animate__animated animate__fadeIn">{% trans %}Bienvenue sur SDBM SYMFONY !{% endtrans %}</h1>
+        <p class="lead mt-3 animate__animated animate__fadeIn animate__delay-1s">{% trans %}Ce projet vise à créer une base de données vide, à la migrer avec une base de données existante, et à gérer les enregistrements avec des fonctionnalités CRUD.{% endtrans %}</p>
     </div>
     
     <div class="row mt-5 text-center">
         <div class="col-md-4 animate__animated animate__fadeInUp">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Ajouter des données</h5>
-                    <p class="card-text">Commencez à ajouter de nouvelles données à votre base de données.</p>
+                    <h5 class="card-title">{% trans %}Ajouter des données {% endtrans %}</h5>
+                    <p class="card-text">{% trans %}Commencez à ajouter de nouvelles données à votre base de données.{% endtrans %}</p>
                    
                 </div>
             </div>
@@ -25,8 +25,8 @@
         <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-1s">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Modifier des données</h5>
-                    <p class="card-text">Modifiez les enregistrements existants dans votre base de données.</p>
+                    <h5 class="card-title">{% trans %}Modifier des données{% endtrans %}</h5>
+                    <p class="card-text">{% trans %}Modifiez les enregistrements existants dans votre base de données.{% endtrans %}</p>
                     
                 </div>
             </div>
@@ -34,8 +34,8 @@
         <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-2s">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Supprimer des données</h5>
-                    <p class="card-text">Supprimez les enregistrements inutiles de votre base de données.</p>
+                    <h5 class="card-title">{% trans %}Supprimer des données{% endtrans %}</h5>
+                    <p class="card-text">{% trans %}Supprimez les enregistrements inutiles de votre base de données.{% endtrans %}</p>
                     
                 </div>
             </div>
